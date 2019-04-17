@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "(, )"
             }
           },
           "imports": [

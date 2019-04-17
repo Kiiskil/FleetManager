@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Google.Protobuf/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1610,11 +1622,11 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/2.1.1": {
+      "Microsoft.EntityFrameworkCore/2.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.1",
-          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.2",
+          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.2",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
@@ -1631,7 +1643,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Abstractions/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -1640,7 +1652,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Analyzers/2.1.2": {
         "type": "package"
       },
       "Microsoft.EntityFrameworkCore.Design/2.1.1": {
@@ -1671,10 +1683,10 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/2.1.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.1"
+          "Microsoft.EntityFrameworkCore": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -2601,6 +2613,34 @@
           }
         }
       },
+      "MySql.Data/8.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.5.1",
+          "System.Configuration.ConfigurationManager": "4.4.1",
+          "System.Security.Permissions": "4.4.1",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/MySql.Data.dll": {}
+        }
+      },
+      "MySql.Data.EntityFrameworkCore/8.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.2",
+          "MySql.Data": "8.0.15"
+        },
+        "compile": {
+          "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -2970,6 +3010,18 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -3944,6 +3996,21 @@
           "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll": {}
         }
       },
+      "System.Security.Cryptography.ProtectedData/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Security.Cryptography.X509Certificates/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4064,7 +4131,7 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -4337,6 +4404,21 @@
     }
   },
   "libraries": {
+    "Google.Protobuf/3.5.1": {
+      "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
+      "type": "package",
+      "path": "google.protobuf/3.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.5.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/netstandard1.0/Google.Protobuf.dll",
+        "lib/netstandard1.0/Google.Protobuf.xml"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5745,41 +5827,41 @@
         "microsoft.dotnet.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/2.1.1": {
-      "sha512": "JuWdlcEkd6VePS1uaiEfGDCuXNkRHFdNuEEdRhlU5E/ikuhSBDy7j0L4hoLAO4/w5u4YpSy59Xwtsq+cIAo+3w==",
+    "Microsoft.EntityFrameworkCore/2.1.2": {
+      "sha512": "TWLvSeeiRkIQQ7iJPt/f0aNZFSnaxu3u6y4RvvwpEuVCNUzMRPO6UJ0DvM/cPc81dx63DPZa0yHnraZqDvT3rQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/2.1.1",
+      "path": "microsoft.entityframeworkcore/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.2.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
-      "sha512": "ZAJuDHQ6y8UMfoEPzASNPKah0PtanxBmygtoFFYBg4mwBwHHIekY7TKZZT8nqKs4pSNC1b7z+gRLbSB5ILGlWQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/2.1.2": {
+      "sha512": "+K58hgIBuSVY8S3d61Z60nv5qFOWvqJNE6tKAB6OwVwMsih5D7qKoyvu5l/ljKVOF53XY02z9B3WTpGS8ekcTA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/2.1.1",
+      "path": "microsoft.entityframeworkcore.abstractions/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.2.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
-      "sha512": "DiKQA07lCZLV5yyTj0KHh+wJzWl8sO2b1sdW31afxgV6NTrFq29NBQKnxllGkwZ5xr8KwrppRYdHhN8r0+FYVQ==",
+    "Microsoft.EntityFrameworkCore.Analyzers/2.1.2": {
+      "sha512": "vwOSUSirtgGvUD+wNsgaYrTteCrL3O+sSFCQitwLzdqT7IvCuxeQI1hG1502thtFgq56zNaGcuIGLMWA85QUnA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/2.1.1",
+      "path": "microsoft.entityframeworkcore.analyzers/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
-        "microsoft.entityframeworkcore.analyzers.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.2.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -5813,16 +5895,16 @@
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
-      "sha512": "NqH03e/oh0KEy5mepy0Eb5nx49eZOKnpa2/d8iwy7IJTapmqdNWx03kuUycaJ+haHmE5Ad8KtzDJK/Nz3OfFFA==",
+    "Microsoft.EntityFrameworkCore.Relational/2.1.2": {
+      "sha512": "D3LftTZACLD0ziUxKbOOnlFOHya8iHAUC0X+LQzRA33SqhTfoDa8D+fMm+R8T9r4+52+/NKBLR24eCEO2xqp+g==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/2.1.1",
+      "path": "microsoft.entityframeworkcore.relational/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.2.1.2.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -6942,6 +7024,44 @@
         "version.txt"
       ]
     },
+    "MySql.Data/8.0.15": {
+      "sha512": "PnjT2+TzlYUBF5cILcLMD1ux85P5iiRTF9PWx+Mel6/Z/rx+k39aWuA0mozfdgd+0TlJjGKKTyQZfKeYlRXTUA==",
+      "type": "package",
+      "path": "mysql.data/8.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MySql.Data.dll",
+        "lib/net452/MySql.Data.xml",
+        "lib/netcoreapp2.0/MySql.Data.dll",
+        "lib/netcoreapp2.0/MySql.Data.xml",
+        "lib/netstandard1.6/MySql.Data.dll",
+        "lib/netstandard1.6/MySql.Data.xml",
+        "lib/netstandard2.0/MySql.Data.dll",
+        "lib/netstandard2.0/MySql.Data.xml",
+        "mysql.data.8.0.15.nupkg.sha512",
+        "mysql.data.nuspec"
+      ]
+    },
+    "MySql.Data.EntityFrameworkCore/8.0.15": {
+      "sha512": "NjYJSbHmiEmxesaNAWQRk15roOX81bI2toPpBypYhHFIKXHxkIPgQH3lxV60efMlIyhSnzLqnIE5kmNsPWfzww==",
+      "type": "package",
+      "path": "mysql.data.entityframeworkcore/8.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MySql.Data.EntityFrameworkCore.dll",
+        "lib/net452/MySql.Data.EntityFrameworkCore.xml",
+        "lib/net461/MySql.Data.EntityFrameworkCore.dll",
+        "lib/net461/MySql.Data.EntityFrameworkCore.xml",
+        "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.dll",
+        "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.xml",
+        "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.dll",
+        "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.xml",
+        "mysql.data.entityframeworkcore.8.0.15.nupkg.sha512",
+        "mysql.data.entityframeworkcore.nuspec"
+      ]
+    },
     "NETStandard.Library/2.0.3": {
       "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
@@ -7808,6 +7928,27 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.annotations.4.5.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/4.4.1": {
+      "sha512": "jz3TWKMAeuDEyrPCK5Jyt4bzQcmzUIMcY9Ud6PkElFxTfnsihV+9N/UCqvxe1z5gc7jMYAnj7V1COMS9QKIuHQ==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.4.1.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -10685,6 +10826,47 @@
         "system.security.cryptography.primitives.nuspec"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "sha512": "cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "sha512": "zw/E0mosQRA9LB/+uDDTdZ/vcfnoVfrXBvM1eQDGzU0Dej7oI4cwJEL3E5ndd4L0RUY0kcujUCO+NXX6N1xRnw==",
       "type": "package",
@@ -11809,7 +11991,8 @@
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "MySql.Data.EntityFrameworkCore"
     ]
   },
   "packageFolders": {
@@ -11868,6 +12051,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "MySql.Data.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "(, )"
           }
         },
         "imports": [
