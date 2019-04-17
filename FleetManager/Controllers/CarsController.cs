@@ -19,18 +19,20 @@ namespace FleetManager.Controllers {
         // GET api/Cars
         [HttpGet]
         public ActionResult Get() {
+
             return Ok(dbContext.Car
-            .Include(car => car.Motor)
-            .Include(car => car.Model)
-            .Include(car => car.Brand)
             .ToArray());
         }
 
         // GET api/Cars/101
         [HttpGet("{id}")]
-        public ActionResult Get(string id) {
+        public ActionResult GetByID(int id) {
             // var Car = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
-            var Car = dbContext.Car.SingleOrDefault(a => a.Regno == id);
+            var Car = dbContext.Car
+            .Include(car => car.Motor)
+            .Include(car => car.Model)
+            .Include(car => car.Brand)
+            .SingleOrDefault(car => car.ID == id);
             if (Car != null) {
                 return Ok(Car);
             } else {
@@ -40,7 +42,7 @@ namespace FleetManager.Controllers {
 
         // POST api/Cars
         [HttpPost]
-        public ActionResult Post([FromBody]Car Car) {
+        public ActionResult CreateCar([FromBody]Car Car) {
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -51,9 +53,9 @@ namespace FleetManager.Controllers {
 
         // PUT api/Cars/101
         [HttpPut("{id}")]
-        public ActionResult Put(string id, [FromBody]Car Car) {
+        public ActionResult ModifyCar(int id, [FromBody]Car Car) {
             // var target = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
-            var target = dbContext.Car.SingleOrDefault(a => a.Regno == id);
+            var target = dbContext.Car.SingleOrDefault(car => car.ID == id);;
             if (target != null && ModelState.IsValid) {
                 dbContext.Entry(target).CurrentValues.SetValues(Car);
                 dbContext.SaveChanges();
@@ -65,9 +67,9 @@ namespace FleetManager.Controllers {
 
         // DELETE api/Cars/101
         [HttpDelete("{id}")]
-        public ActionResult Delete(string id) {
+        public ActionResult DeleteCar(int id) {
             // var Car = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
-            var Car = dbContext.Car.SingleOrDefault(a => a.Regno == id);
+            var Car = dbContext.Car.SingleOrDefault(car => car.ID == id);
             if (Car != null) {
                 dbContext.Car.Remove(Car);
                 dbContext.SaveChanges();

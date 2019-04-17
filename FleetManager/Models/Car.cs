@@ -9,7 +9,6 @@ namespace FleetManager.Models{
         public int ID{get;set;}
         [Column("name")]
         public string Name{get;set;}
-        public Car Car {get;set;}
     }
 
     [Table("motor")]
@@ -20,7 +19,6 @@ namespace FleetManager.Models{
         public double Size{get;set;}
         [Column("power")]
         public int Power{get;set;}
-        public Car Car {get;set;}
     }
 
     [Table("brand")]
@@ -29,12 +27,14 @@ namespace FleetManager.Models{
         public int ID{get;set;}
         [Column("name")]
         public string Name{get;set;}
-        public Car Car {get;set;}
     }
 
     [Table("cars")]
     public class Car {
-        [Key, Column("regno")]
+        [Key, Column("carID")]
+        public int ID {get;set;}
+
+        [Column("regno")]
         public string Regno { get; set; }
 
         [Column("year")]
@@ -44,14 +44,14 @@ namespace FleetManager.Models{
         public string InspectionDate { get; set; }
 
         [Column("modelID")]
-       /*  public int ModelID { get; set; } */
+        public int ModelID { get; set; }
         public Model Model {get;set;} //Navigation property
 
         [Column("motorID")]
-/*         public int MotorID { get; set; } */
+        public int MotorID { get; set; }
         public Motor Motor {get;set;}
         [Column("brandID")]
-        /* public int BrandID { get; set; } */
+        public int BrandID { get; set; }
         public Brand Brand {get;set;}
     }
 }

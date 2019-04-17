@@ -6,9 +6,9 @@ namespace FleetManager.Models{
         : base(options) { }
 
         public DbSet<Car> Car { get; set; }
-       /*  public DbSet<Model> Modell { get; set; }
+        public DbSet<Model> CarModel { get; set; }
         public DbSet<Motor> Motor { get; set; }
-        public DbSet<Brand> Brand { get; set; } */
+        public DbSet<Brand> Brand { get; set; }
         // DbSet<T> type properties for other domain models
         /* protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
