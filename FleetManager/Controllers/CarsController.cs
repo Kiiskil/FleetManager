@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using FleetManager.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace FleetManager.Controllers {
 
@@ -18,7 +19,11 @@ namespace FleetManager.Controllers {
         // GET api/Cars
         [HttpGet]
         public ActionResult Get() {
-            return Ok(dbContext.Car.ToArray());
+            return Ok(dbContext.Car
+            .Include(car => car.Motor)
+            .Include(car => car.Model)
+            .Include(car => car.Brand)
+            .ToArray());
         }
 
         // GET api/Cars/101
