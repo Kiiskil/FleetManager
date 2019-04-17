@@ -12,3 +12,17 @@
 /home/iiro/Documents/prokkis/fleetmanager/FleetManager/obj/Debug/netcoreapp2.1/FleetManager.RazorTargetAssemblyInfo.cache
 /home/iiro/Documents/prokkis/fleetmanager/FleetManager/obj/Debug/netcoreapp2.1/FleetManager.dll
 /home/iiro/Documents/prokkis/fleetmanager/FleetManager/obj/Debug/netcoreapp2.1/FleetManager.pdb
+G:\Prokkis\FleetManager\FleetManager\bin\Debug\netcoreapp2.1\FleetManager.deps.json
+G:\Prokkis\FleetManager\FleetManager\bin\Debug\netcoreapp2.1\FleetManager.runtimeconfig.json
+G:\Prokkis\FleetManager\FleetManager\bin\Debug\netcoreapp2.1\FleetManager.runtimeconfig.dev.json
+G:\Prokkis\FleetManager\FleetManager\bin\Debug\netcoreapp2.1\FleetManager.dll
+G:\Prokkis\FleetManager\FleetManager\bin\Debug\netcoreapp2.1\FleetManager.pdb
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.csprojAssemblyReference.cache
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.csproj.CoreCompileInputs.cache
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.RazorAssemblyInfo.cache
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.RazorAssemblyInfo.cs
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.AssemblyInfoInputs.cache
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.AssemblyInfo.cs
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.RazorTargetAssemblyInfo.cache
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.dll
+G:\Prokkis\FleetManager\FleetManager\obj\Debug\netcoreapp2.1\FleetManager.pdb

@@ -11,8 +11,8 @@ namespace FleetManager.Controllers {
         private CarsDbContext dbContext;
 
         public CarsController() {
-            // string connectionString = "server=localhost;port=3306;database=sakila;userid=admin;pwd=arnoboy11;sslmode=none";
-            string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
+            string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none";
+            // string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
             dbContext = CarsDbContextFactory.Create(connectionString);
         }
 

@@ -1,9 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/iiro/.dotnet/store/|arch|/|tfm|",
-      "/home/iiro/.nuget/packages",
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "C:\\Users\\iirol\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\iirol\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

@@ -6,7 +6,7 @@ namespace FleetManager.Models{
         : base(options) { }
 
         public DbSet<Car> Car { get; set; }
-        /* public DbSet<Modal> Modal { get; set; }
+       /*  public DbSet<Model> Modell { get; set; }
         public DbSet<Motor> Motor { get; set; }
         public DbSet<Brand> Brand { get; set; } */
         // DbSet<T> type properties for other domain models
@@ -14,9 +14,9 @@ namespace FleetManager.Models{
         {
             modelBuilder.Entity<Car>()
                 .HasOne(c => c.Motor)
-                .WithOne(a => a.Car)
-                .HasForeignKey<Car>(a => a.Regno)
-                .HasPrincipalKey<Motor>(c => c.ID);
+                .WithOne(m => m.Car)
+                .HasForeignKey<Car>(c => c.Regno)
+                .HasPrincipalKey(m => m.);
         } */
     }
 
