@@ -11,20 +11,20 @@ namespace FleetManager.Controllers {
         private CarsDbContext dbContext;
 
         public CarsController() {
-            string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none";
-            // string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
+           /*  string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none"; */
+            string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
             dbContext = CarsDbContextFactory.Create(connectionString);
         }
 
-        // GET api/Cars
-        [HttpGet]
+        // GET api/cars/all
+        //KARSI model,brand ja motor koska ne ovat NULL ilman Include-metodia ja/tai erikseen maaritettyja relaatioita
+        [HttpGet("{all}")]
         public ActionResult Get() {
-
             return Ok(dbContext.Car
             .ToArray());
         }
 
-        // GET api/Cars/101
+        // GET api/cars/101
         [HttpGet("{id}")]
         public ActionResult GetByID(int id) {
             // var Car = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
@@ -33,6 +33,19 @@ namespace FleetManager.Controllers {
             .Include(car => car.Model)
             .Include(car => car.Brand)
             .SingleOrDefault(car => car.ID == id);
+            if (Car != null) {
+                return Ok(Car);
+            } else {
+                return NotFound();
+            }
+        }
+        //GET api/year/from/to/
+        [HttpGet("year/{low}/{high}")]
+        public ActionResult GetByYear(int low, int high) {
+            // var Car = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
+            var Car = dbContext.Car
+
+            .Where(car => car.Year >= low && car.Year <= high).ToArray();
             if (Car != null) {
                 return Ok(Car);
             } else {
