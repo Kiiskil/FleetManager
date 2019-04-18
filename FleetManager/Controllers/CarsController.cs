@@ -11,6 +11,7 @@ namespace FleetManager.Controllers {
         private CarsDbContext dbContext;
 
         public CarsController() {
+            //SIIRRA yhteystiedot AppSetting.json:iin
            /*  string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none"; */
             string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
             dbContext = CarsDbContextFactory.Create(connectionString);
@@ -39,6 +40,7 @@ namespace FleetManager.Controllers {
                 return NotFound();
             }
         }
+
         //GET api/year/from/to/
         [HttpGet("year/{low}/{high}")]
         public ActionResult GetByYear(int low, int high) {
@@ -52,6 +54,19 @@ namespace FleetManager.Controllers {
                 return NotFound();
             }
         }
+
+        // GET api/model/101
+        //Zeros are ignored, so this method can be used for both filters separately or by themselves
+        [HttpGet("brand/{brand}/model/{model}")]
+        public ActionResult GetByModel(int brand, int model) {
+            return Ok(brand);
+        }
+
+        /* // GET api/brand/101
+        [HttpGet("{brand}")]
+        public ActionResult GetByModel(int id) {
+
+        } */
 
         // POST api/Cars
         [HttpPost]
