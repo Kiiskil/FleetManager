@@ -13,15 +13,15 @@ namespace FleetManager.Controllers {
         public CarsController() {
             //SIIRRA yhteystiedot AppSetting.json:iin
            /*  string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none"; */
-            string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=admin;pwd=arnoboy11";
+            string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=testi;pwd=salasana";
             dbContext = CarsDbContextFactory.Create(connectionString);
         }
 
-        // GET api/cars/all
-        //KARSI model,brand ja motor koska ne ovat NULL ilman Include-metodia ja/tai erikseen maaritettyja relaatioita
-        [HttpGet("{all}")]
-        public ActionResult Get() {
+        // GET api/cars/
+        [HttpGet]
+        public ActionResult GetAllCars() {
             return Ok(dbContext.Car
+            .FromSql("SELECT carID, regno, year, inspection_date, brandID, motorID, modelID FROM cars")
             .ToArray());
         }
 
@@ -46,7 +46,6 @@ namespace FleetManager.Controllers {
         public ActionResult GetByYear(int low, int high) {
             // var Car = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);
             var Car = dbContext.Car
-
             .Where(car => car.Year >= low && car.Year <= high).ToArray();
             if (Car != null) {
                 return Ok(Car);
@@ -59,7 +58,27 @@ namespace FleetManager.Controllers {
         //Zeros are ignored, so this method can be used for both filters separately or by themselves
         [HttpGet("brand/{brand}/model/{model}")]
         public ActionResult GetByModel(int brand, int model) {
-            return Ok(brand);
+            var Car = dbContext.Car.ToArray();
+            if (brand == 0)
+            {
+                Car = dbContext.Car
+                .Where(car => car.Model.ID == model).ToArray();  
+            }
+            else if (model == 0)
+            {
+                Car = dbContext.Car
+                .Where(car => car.Brand.ID == brand).ToArray();   
+            }
+            else
+            {
+                Car = dbContext.Car
+                .Where(car => car.Model.ID == model && car.Brand.ID == brand).ToArray();   
+            };
+            if (Car != null) {
+                return Ok(Car);
+            } else {
+                return NotFound();
+            }
         }
 
         /* // GET api/brand/101
@@ -78,6 +97,14 @@ namespace FleetManager.Controllers {
             dbContext.SaveChanges();
             return Created("api/Cars", Car);
         }
+         /* {
+        "regno": "DDD-111",
+        "year": 1960,
+        "inspectionDate": "1950-01-01",
+        "modelID": 1,
+        "motorID": 2,
+        "brandID": 2
+        } */
 
         // PUT api/Cars/101
         [HttpPut("{id}")]

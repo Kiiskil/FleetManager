@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace FleetManager.Models{
 
     [Table("model")]
@@ -45,11 +46,15 @@ namespace FleetManager.Models{
 
         [Column("modelID")]
         public int ModelID { get; set; }
+
         public Model Model {get;set;} //Navigation property
 
         [Column("motorID")]
+
         public int MotorID { get; set; }
+
         public Motor Motor {get;set;}
+        
         [Column("brandID")]
         public int BrandID { get; set; }
         public Brand Brand {get;set;}
