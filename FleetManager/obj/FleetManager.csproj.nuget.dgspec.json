@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/iiro/Documents/prokkis/fleetmanager/FleetManager/FleetManager.csproj": {}
+    "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj": {}
   },
   "projects": {
-    "/home/iiro/Documents/prokkis/fleetmanager/FleetManager/FleetManager.csproj": {
+    "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/iiro/Documents/prokkis/fleetmanager/FleetManager/FleetManager.csproj",
+        "projectUniqueName": "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj",
         "projectName": "FleetManager",
-        "projectPath": "/home/iiro/Documents/prokkis/fleetmanager/FleetManager/FleetManager.csproj",
-        "packagesPath": "/home/iiro/.nuget/packages/",
-        "outputPath": "/home/iiro/Documents/prokkis/fleetmanager/FleetManager/obj/",
+        "projectPath": "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj",
+        "packagesPath": "C:\\Users\\iirol\\.nuget\\packages\\",
+        "outputPath": "G:\\Prokkis\\fleetmanager\\FleetManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/iiro/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\iirol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

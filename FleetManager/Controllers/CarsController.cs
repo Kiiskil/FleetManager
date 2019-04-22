@@ -11,9 +11,8 @@ namespace FleetManager.Controllers {
         private CarsDbContext dbContext;
 
         public CarsController() {
-            //SIIRRA yhteystiedot AppSetting.json:iin
-           /*  string connectionString = "server=192.168.100.13;port=3306;database=fleet_manager;userid=admin;pwd=arnoboy11;sslmode=none"; */
-            string connectionString = "server=iirola.hopto.org;port=5001;database=fleet_manager;userid=testi;pwd=salasana";
+            //DB-tiedot AppSetting.jsonissa, josta startup hakee sen
+            string connectionString = Startup.ConnectionString;
             dbContext = CarsDbContextFactory.Create(connectionString);
         }
 

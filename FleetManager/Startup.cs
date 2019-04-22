@@ -12,28 +12,6 @@ using Newtonsoft.Json;
 
 namespace FleetManager
 {
-    /* public class Startup
-    {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
-        {
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
-        }
-    } */
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -46,7 +24,11 @@ namespace FleetManager
             Configuration = builder.Build();
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfigurationRoot Configuration { get; set; }
+        public static string ConnectionString {  
+            get;  
+            private set;  
+        } 
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -62,7 +44,7 @@ namespace FleetManager
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
             app.UseMvc();
         }
     }
