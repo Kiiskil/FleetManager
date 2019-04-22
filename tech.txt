@@ -7,7 +7,7 @@ CentOS 7
 	-.Net Core runtime 2.1
 	-MySql ver 14.14
 
-Fleetmanager conffed as system service:
+Fleetmanager conffed as system service, listening on port 5000:
 /etc/systemd/system/kestrel-fleetmanager.service
 
 	[Unit]
@@ -38,4 +38,6 @@ fleetmanager.conf
 	</VirtualHost>
 
 Models are configured using Data Annotations and Entity Framework provided in .NET Core 2.1.
+
+
 

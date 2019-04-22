@@ -1,29 +1,35 @@
+FleetManager
+API-demo
+Iiro Laukkanen 2019
+github.com/Kiiskil
+http://fleetmanager.hopto.org/
+
 App can be setup on .NET Core-enabled server right away by copying contents of \fleetmanager\FleetManager\bin\Release\netcoreapp2.1\publish to server.
 The MySQL-database have to be set up manually.
 
 Seed data on database is:
-Four cars
-	-carID: Int (1-4)
-	-regno: String
-	-year: Int
-	-inspection_date: DATE ("YYYY-MM-DD")
-	-modelID: Int (FK_modelID)
-	-brandID: Int (FK_brandID)
-	-motorID: Int (FK_motorID)
+	Four cars
+		-carID: Int (1-4)
+		-regno: String
+		-year: Int
+		-inspection_date: DATE ("YYYY-MM-DD")
+		-modelID: Int (FK_modelID)
+		-brandID: Int (FK_brandID)
+		-motorID: Int (FK_motorID)
 
-Two brands
-	-brandID: Int (1-2)
-	-name: String
-Two models
-	-modelID: Int (1-2)
-	-name: String
-Three motors
-	-motorID: Int (1-3)
-	-motorsize: Double
-	-power: Int
+	Two brands
+		-brandID: Int (1-2)
+		-name: String
+	Two models
+		-modelID: Int (1-2)
+		-name: String
+	Three motors
+		-motorID: Int (1-3)
+		-motorsize: Double
+		-power: Int
 
 
-API returns values as serialized objects, formatted in JSON
+API returns serialized objects, formatted in JSON
 API-calls:
 
 GET {URL}/api/cars
@@ -72,3 +78,8 @@ DELETE {URL}/api/cars/{id}
 	-Delete car with id
 
 API is running on fleetmanager.hopto.org, so it can be tested on that URL.
+
+TODO: 
+	-PUT-method needs all properties through query to work. If some properties are missing, use existing ones.
+	-Add try-catches
+	-Make same functionality using Fluent API

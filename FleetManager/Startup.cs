@@ -19,6 +19,7 @@ namespace FleetManager
     {
         public Startup(IHostingEnvironment env)
         {
+            //Get current workfolder for dynamic relative paths
             var publishPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             var builder = new ConfigurationBuilder()
                 .SetBasePath(publishPath)
@@ -48,12 +49,12 @@ namespace FleetManager
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            //use headers for Apache
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
-            
+            //get DB-data from appsettings.json
             ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
             app.UseMvc();
         }

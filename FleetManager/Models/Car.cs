@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace FleetManager.Models{
-
+    //Data annotations for model-building
     [Table("model")]
     public class Model{
         [Key, Column("modelID")]
