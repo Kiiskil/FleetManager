@@ -85,3 +85,4 @@ TODO:
 	-PUT-method currently needs all properties through query to work. If some properties are missing, use existing ones.
 	-Add try-catches
 	-Make same functionality using Fluent API
+	-Sanitation of SQL-queries
