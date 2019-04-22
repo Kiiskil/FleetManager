@@ -2,7 +2,7 @@ FleetManager
 API-demo
 Iiro Laukkanen 2019
 github.com/Kiiskil
-http://fleetmanager.hopto.org/
+http://fleetmanager.hopto.org/api/cars
 
 App can be setup on .NET Core-enabled server right away by copying contents of \fleetmanager\FleetManager\bin\Release\netcoreapp2.1\publish to server.
 The MySQL-database have to be set up manually.
