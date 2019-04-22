@@ -43,12 +43,12 @@ GET {URL}/api/cars/{id}
 
 GET {URL}/api/cars/year/{from}/{to}
 	-Lists all cars within that range of manufacturing years
-	--GET localhost:5000/api/year/1910/1940
+	--GET localhost:5000/api/cars/year/1910/1940
 
 GET {URL}/api/cars/brand/{brand}/model/{model}
 	-Lists all cars with that brand id and / or that model id. Zeros are ignored.
-	--GET localhost:5000/api/brand/1/model/1 -> All cars with brand id = 1 and model id = 1
-	--GET localhost:5000/api/brand/1/model/0 -> All cars with brand id = 1
+	--GET localhost:5000/api/cars/brand/1/model/1 -> All cars with brand id = 1 and model id = 1
+	--GET localhost:5000/api/cars/brand/1/model/0 -> All cars with brand id = 1
 
 POST {URL}/api/cars
 	-Create a new car
