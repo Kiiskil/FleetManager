@@ -4,7 +4,7 @@ Iiro Laukkanen 2019
 github.com/Kiiskil
 http://fleetmanager.hopto.org/api/cars
 
-RESTful API, made with .NET CORE 2.1
+Very basic RESTful API, made with .NET CORE 2.1
 
 App can be setup on .NET Core-enabled server right away by copying contents of \fleetmanager\FleetManager\bin\Release\netcoreapp2.1\publish to server.
 The MySQL-database have to be set up manually.
