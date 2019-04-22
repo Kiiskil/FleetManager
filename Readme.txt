@@ -4,10 +4,12 @@ Iiro Laukkanen 2019
 github.com/Kiiskil
 http://fleetmanager.hopto.org/api/cars
 
+RESTful API, made with .NET CORE 2.1
+
 App can be setup on .NET Core-enabled server right away by copying contents of \fleetmanager\FleetManager\bin\Release\netcoreapp2.1\publish to server.
 The MySQL-database have to be set up manually.
 
-Seed data on database is:
+Seed data on database, in four tables, is:
 	Four cars
 		-carID: Int (1-4)
 		-regno: String
@@ -80,6 +82,6 @@ DELETE {URL}/api/cars/{id}
 API is running on fleetmanager.hopto.org, so it can be tested on that URL.
 
 TODO: 
-	-PUT-method needs all properties through query to work. If some properties are missing, use existing ones.
+	-PUT-method currently needs all properties through query to work. If some properties are missing, use existing ones.
 	-Add try-catches
 	-Make same functionality using Fluent API
