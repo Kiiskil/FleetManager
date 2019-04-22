@@ -53,7 +53,7 @@ namespace FleetManager.Controllers {
             }
         }
 
-        // GET api/model/101
+        // GET brand/1/model/2
         //Zeros are ignored, so this method can be used for both filters separately or by themselves
         [HttpGet("brand/{brand}/model/{model}")]
         public ActionResult GetByModel(int brand, int model) {
@@ -80,13 +80,7 @@ namespace FleetManager.Controllers {
             }
         }
 
-        /* // GET api/brand/101
-        [HttpGet("{brand}")]
-        public ActionResult GetByModel(int id) {
-
-        } */
-
-        // POST api/Cars
+        // POST api/cars
         [HttpPost]
         public ActionResult CreateCar([FromBody]Car Car) {
             if (!ModelState.IsValid)
@@ -96,16 +90,8 @@ namespace FleetManager.Controllers {
             dbContext.SaveChanges();
             return Created("api/Cars", Car);
         }
-         /* {
-        "regno": "DDD-111",
-        "year": 1960,
-        "inspectionDate": "1950-01-01",
-        "modelID": 1,
-        "motorID": 2,
-        "brandID": 2
-        } */
 
-        // PUT api/Cars/101
+        // PUT api/cars/101
         [HttpPut("{id}")]
         public ActionResult ModifyCar(int id, [FromBody]Car Car) {
             // var target = dbContext.Car.SingleOrDefault(a => a.Car_ID == id);

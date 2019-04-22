@@ -21,9 +21,7 @@ namespace FleetManager
         {
             var publishPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             var builder = new ConfigurationBuilder()
-                /* .SetBasePath(env.ContentRootPath) */
                 .SetBasePath(publishPath)
-                /* .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) */
                 .AddJsonFile(publishPath+"/appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();

@@ -1,0 +1,41 @@
+FleetManager-API
+VS Code
+	-.Net Core SDK 2.1
+
+CentOS 7
+	-Apache 2.4
+	-.Net Core runtime 2.1
+	-MySql ver 14.14
+
+Fleetmanager conffed as system service:
+/etc/systemd/system/kestrel-fleetmanager.service
+
+	[Unit]
+	Description=FleetManager API on Centos 7
+
+	[Service]
+	WorkingDirectory=/var/www/html/fleetmanager/
+	ExecStart=/usr/bin/dotnet FleetManager.dll
+	Restart=always
+	# Restart service after 10 seconds if the dotnet service crashes:
+	RestartSec=10
+	KillSignal=SIGINT
+	SyslogIdentifier=dotnet-fleetmanager
+	User=root
+	Environment=ASPNETCORE_ENVIRONMENT=Production
+
+	[Install]
+	WantedBy=multi-user.target
+
+App is served by Apache through VirtualHost:
+fleetmanager.conf
+
+	<VirtualHost *:80>
+    		ProxyPreserveHost On
+    		ProxyPass / http://127.0.0.1:5000/
+    		ProxyPassReverse / http://127.0.0.1:5000/
+    		ServerName fleetmanager.hopto.org
+	</VirtualHost>
+
+Models are configured using Data Annotations and Entity Framework provided in .NET Core 2.1.
+
