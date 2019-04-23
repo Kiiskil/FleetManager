@@ -42,6 +42,9 @@ namespace FleetManager
             services.AddMvc()
             .AddJsonOptions(options => {
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;});
+            
+            //Allow AJAX-calls from non-same origin trough CORS 
+            //services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +57,19 @@ namespace FleetManager
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
+
+            //Allow CORS from one origin
+            /* app.UseCors(builder =>
+            builder.WithOrigins("http://very-trusted-site.com")
+            .WithMethods("GET", "POST", "PUT", "DELETE")
+            .AllowAnyHeader()); */
+
+            //Allow CORS from any origin
+            /* app.UseCors(builder =>
+            builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()); */
+
             //get DB-data from appsettings.json
             ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
             app.UseMvc();

@@ -10,16 +10,8 @@ using Newtonsoft.Json;
 
 namespace FMAPI.Test
 {
-    public class CarsControllerFunctionTest
+    public class CarsControllerEtETest
     {
-        [Fact]
-        public void GetAllCars()
-        {
-            var controller = new CarsController();
-            var result = controller.GetAllCars() as OkObjectResult;
-            Assert.NotNull(result);
-        }
-
         [Fact]
         public async void GetCarByIdSmokeTest()
         {
@@ -45,4 +37,5 @@ namespace FMAPI.Test
             }
         }
     }
+
 }
