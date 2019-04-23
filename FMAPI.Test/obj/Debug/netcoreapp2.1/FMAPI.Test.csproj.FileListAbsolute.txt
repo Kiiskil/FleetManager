@@ -1,0 +1,17 @@
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FMAPI.Test.deps.json
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FMAPI.Test.runtimeconfig.json
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FMAPI.Test.runtimeconfig.dev.json
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FMAPI.Test.dll
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FMAPI.Test.pdb
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FleetManager.dll
+G:\Prokkis\FleetManager\FMAPI.Test\bin\Debug\netcoreapp2.1\FleetManager.pdb
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.csprojAssemblyReference.cache
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.csproj.CoreCompileInputs.cache
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.AssemblyInfoInputs.cache
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.AssemblyInfo.cs
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.csproj.CopyComplete
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.dll
+G:\Prokkis\FleetManager\FMAPI.Test\obj\Debug\netcoreapp2.1\FMAPI.Test.pdb

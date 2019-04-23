@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj": {}
+    "G:\\Prokkis\\FleetManager\\FleetManager\\FleetManager.csproj": {}
   },
   "projects": {
-    "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj": {
+    "G:\\Prokkis\\FleetManager\\FleetManager\\FleetManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj",
+        "projectUniqueName": "G:\\Prokkis\\FleetManager\\FleetManager\\FleetManager.csproj",
         "projectName": "FleetManager",
-        "projectPath": "G:\\Prokkis\\fleetmanager\\FleetManager\\FleetManager.csproj",
+        "projectPath": "G:\\Prokkis\\FleetManager\\FleetManager\\FleetManager.csproj",
         "packagesPath": "C:\\Users\\iirol\\.nuget\\packages\\",
-        "outputPath": "G:\\Prokkis\\fleetmanager\\FleetManager\\obj\\",
+        "outputPath": "G:\\Prokkis\\FleetManager\\FleetManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
