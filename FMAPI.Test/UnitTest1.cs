@@ -12,20 +12,20 @@ namespace FMAPI.Test
 {
     public class CarsControllerFunctionTest
     {
-        [Fact]
+        /* [Fact]
         public void GetAllCars()
         {
             var controller = new CarsController();
             var result = controller.GetAllCars() as OkObjectResult;
             Assert.NotNull(result);
-        }
+        } */
 
         [Fact]
         public async void GetCarByIdSmokeTest()
         {
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://localhost:5000/");
+                httpClient.BaseAddress = new Uri("http://fleetmanager.hopto.org/");
                 var acceptType = new MediaTypeWithQualityHeaderValue("application/json");
                 httpClient.DefaultRequestHeaders.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(acceptType);

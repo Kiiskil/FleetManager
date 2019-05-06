@@ -42,6 +42,19 @@ namespace FleetManager
             services.AddMvc()
             .AddJsonOptions(options => {
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;});
+            
+            services.AddCors(options =>
+            {
+            //allow CORS (Cross origin resource request)
+            options.AddDefaultPolicy(
+                builder =>
+                {
+                   
+                    /* builder.WithOrigins("http://example.com",
+                                        "http://www.contoso.com"); */
+                    builder.AllowAnyOrigin();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +70,7 @@ namespace FleetManager
             //get DB-data from appsettings.json
             ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
             app.UseMvc();
+            app.UseCors();
         }
     }
 }
