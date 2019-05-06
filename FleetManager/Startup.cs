@@ -43,7 +43,6 @@ namespace FleetManager
             .AddJsonOptions(options => {
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;});
             
-<<<<<<< HEAD
             services.AddCors(options =>
             {
             //allow CORS (Cross origin resource request)
@@ -56,10 +55,6 @@ namespace FleetManager
                     builder.AllowAnyOrigin();
                 });
             });
-=======
-            //Allow AJAX-calls from non-same origin trough CORS 
-            //services.AddCors();
->>>>>>> 8fb916ef37585ca545b9e3132ff68e9a43c0b3c7
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
