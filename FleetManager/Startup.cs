@@ -90,6 +90,7 @@ namespace FleetManager
                         /* builder.WithOrigins("http://example.com",
                                         "http://www.contoso.com"); */
                         builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
                         .AllowAnyHeader();
                     });
         }
