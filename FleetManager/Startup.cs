@@ -46,14 +46,15 @@ namespace FleetManager
             services.AddCors(options =>
             {
             //allow CORS (Cross origin resource request)
-            options.AddDefaultPolicy(
-                builder =>
-                {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
                    
-                    /* builder.WithOrigins("http://example.com",
+                        /* builder.WithOrigins("http://example.com",
                                         "http://www.contoso.com"); */
-                    builder.AllowAnyOrigin();
-                });
+                        builder.AllowAnyOrigin()
+                        .AllowAnyHeader();
+                    });
             });
         }
 
